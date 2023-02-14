@@ -14,6 +14,7 @@ in
     "kvm_amd.sev_es=1"
     "kvm_amd.sev_snp=1"
     #"kvm.mmio_caching=on"
+    "sp5100_tco.blacklist=yes"
   ];
 
   # enable libvirtd service
