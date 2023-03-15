@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-  linux = pkgs.callPackage ../pkgs/kernels/linux-sev-snp-5.19.nix { };
+  linux = pkgs.callPackage ../pkgs/kernels/linux-sev-snp.nix { };
   linuxPackages = pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
 in
 {

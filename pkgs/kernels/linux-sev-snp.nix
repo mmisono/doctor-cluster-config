@@ -22,7 +22,7 @@ let
     sha256 = "sha256-XzTXafyv/tIIhBLPp2KsBTYd5otVlWr1fgy736mAZLw=";
     version = "5.19";
     modDirVersionArg = "5.19.0-rc5-next-20220706";
-    extraPatches = [];
+    extraPatches = [ ];
   };
 
   # 5.19-rc6 version, with binutils patches
@@ -55,7 +55,7 @@ let
     sha256 = "sha256-M/20L2gS8Mg3iLRq00PrlwXyxGD+IEzgcm8/GXWvIBw=";
     version = "6.1";
     modDirVersionArg = "6.1.0-rc4";
-    extraPatches = [];
+    extraPatches = [ ];
   };
 
   # snp host latest branch
@@ -67,7 +67,7 @@ let
     sha256 = "sha256-HP2U6xtwqZQgzJd/RH2I3Ph5wKVkhXtVajNALf4R4HQ=";
     version = "6.1";
     modDirVersionArg = "6.1.0-rc4";
-    extraPatches = [];
+    extraPatches = [ ];
   };
 
   # change here to change kernel
@@ -75,7 +75,8 @@ let
   # snp_kernel = snp_6_1_rfc_v8;
   snp_kernel = snp_latest;
 
-in with snp_kernel;
+in
+with snp_kernel;
 buildLinux (args // rec {
   inherit version;
   modDirVersion =

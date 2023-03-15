@@ -1,21 +1,6 @@
 { pkgs, lib, ... }:
 let
-
-  # linux = pkgs.callPackage ../pkgs/kernels/linux-svsm-host-5.14.nix {
-  # extraPatches = [
-  #    {
-  #      # for some reaon, the BTF build fails for 5.14 svsm kernel
-  #      # so just disable it
-  #      name = "disable BTF";
-  #      patch = null;
-  #      extraConfig = ''
-  #        DEBUG_INFO_BTF n
-  #      '';
-  #    }
-  #  ];
-  # };
-
-  linux = pkgs.callPackage ../pkgs/kernels/linux-svsm-host-6.1.nix {};
+  linux = pkgs.callPackage ../pkgs/kernels/linux-svsm-host.nix { };
   linuxPackages = pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor linux);
 in
 {
